@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -11,7 +11,10 @@ const Button: React.FC<ButtonProps> = ({ children, variant = 'primary', onClick 
   const variantStyle = variant === 'primary' ? "bg-blue-500 hover:bg-blue-700" : "bg-gray-500 hover:bg-gray-700";
   
   return (
-    <button onClick={onClick} className={`${baseStyle} ${variantStyle}`}>
+    <button
+      onClick={onClick}
+      className="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out"
+    >
       {children}
     </button>
   );

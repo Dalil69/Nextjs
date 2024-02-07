@@ -16,13 +16,18 @@ const ModalProvider: React.FC = ({ children }) => {
 
   return (
     <ModalContext.Provider value={{ isShown, showModal, hideModal }}>
+ 
       {children}
       {isShown && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-          {/* Modal Content Here */}
-          <div className="bg-white p-4 rounded-lg">
+       <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+       <div className="bg-white p-5 rounded-lg shadow-lg">
             <p>Modal content here.</p>
-            <button onClick={hideModal}>Close</button>
+            <button
+          onClick={onClose}
+          className="mt-4 bg-secondary hover:bg-secondary-dark text-white font-bold py-2 px-4 rounded"
+        >
+          Close
+        </button>
           </div>
         </div>
       )}

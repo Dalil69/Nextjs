@@ -6,15 +6,23 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+module.exports = {
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        primary: '#007bff', // Bleu
+        secondary: '#6c757d', // Gris
+        // Ajoutez ou modifiez selon le design Dribbble
       },
+      fontFamily: {
+        sans: ['Graphik', 'sans-serif'],
+        serif: ['Merriweather', 'serif'],
+        // Adaptez à votre choix de typographie
+      },
+      // Ajoutez d'autres personnalisations ici
     },
   },
   plugins: [],
+}
 };
 export default config;
