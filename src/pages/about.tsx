@@ -1,6 +1,6 @@
 import React from 'react';
-import Layout from '../layout';
-import Button from '../components/button';
+import Layout from '../app/layout';
+import Button from '../app/components/button';
 
 
 
