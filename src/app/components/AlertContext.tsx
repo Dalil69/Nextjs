@@ -1,6 +1,10 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-const AlertContext = createContext({
+interface AlertProviderProps {
+  children: ReactNode;
+}
+
+export const AlertContext = createContext({
   message: '',
   showAlert: (msg: string) => {},
   hideAlert: () => {},
@@ -8,7 +12,7 @@ const AlertContext = createContext({
 
 export const useAlert = () => useContext(AlertContext);
 
-const AlertProvider: React.FC = ({ children }) => {
+const AlertProvider: React.FC<AlertProviderProps> = ({ children }) => {
   const [message, setMessage] = useState('');
 
   const showAlert = (msg: string) => setMessage(msg);

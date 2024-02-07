@@ -1,23 +1,23 @@
 import React from 'react';
 
-const DataTable = ({ data }) => {
+interface DataItem {
+  id: number;
+  name: string;
+  
+}
+
+interface DataTableProps {
+  data: DataItem[]; 
+}
+
+const DataTable: React.FC<DataTableProps> = ({ data }) => {
   return (
     <table className="min-w-full divide-y divide-gray-200">
       <thead className="bg-gray-50">
-        <tr>
-          <th>Column 1</th>
-          <th>Column 2</th>
-          {/* Ajoutez plus de colonnes ici */}
-        </tr>
+        {/* En-têtes de tableau */}
       </thead>
-      <tbody>
-        {data.map((row, index) => (
-          <tr key={index}>
-            <td>{row.column1}</td>
-            <td>{row.column2}</td>
-            {/* Ajoutez plus de cellules ici */}
-          </tr>
-        ))}
+      <tbody className="bg-white divide-y divide-gray-200">
+        {/* Lignes de données */}
       </tbody>
     </table>
   );
