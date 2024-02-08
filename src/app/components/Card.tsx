@@ -37,6 +37,7 @@ const Card: React.FC<CardProps> = ({
             {icon || <FcPlus className="h-6 w-6 text-green-500" />}
           </motion.div>
         </div>
+        
         <div>
           <div className="text-sm font-medium text-gray-500">{title}</div>
           <div className="text-sm text-gray-600">{value}</div>
@@ -45,15 +46,6 @@ const Card: React.FC<CardProps> = ({
         </div>
       </div>
       <div className="mt-4 flex justify-between">
-        {/* Bouton pour ajouter une carte */}
-        {onAdd && (
-          <button
-            onClick={onAdd}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          >
-            Add
-          </button>
-        )}
         {/* Bouton pour retirer une carte */}
         {onRemove && (
           <button
