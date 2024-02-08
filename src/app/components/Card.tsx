@@ -1,5 +1,18 @@
+import React from 'react'; // Importez React
 import { motion } from "framer-motion";
 import { FcPlus } from "react-icons/fc";
+
+
+interface CardProps {
+  title: string;
+  value: string;
+  icon?: JSX.Element; 
+  description: string;
+  imageUrl: string;
+  onAdd?: () => void; 
+  onRemove?: () => void; 
+  onUpdate?: () => void; 
+}
 
 const Card: React.FC<CardProps> = ({
   title,
@@ -21,7 +34,7 @@ const Card: React.FC<CardProps> = ({
             animate={{ rotate: 360 }}
             transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
           >
-            <FcPlus className="h-6 w-6 text-green-500" />
+            {icon || <FcPlus className="h-6 w-6 text-green-500" />}
           </motion.div>
         </div>
         <div>

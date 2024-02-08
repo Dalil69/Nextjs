@@ -14,17 +14,16 @@ const AboutPage = () => {
   ]);
 
   const addPatient = () => {
-    // Logique pour ajouter un patient
     const newPatient = { id: patients.length + 1, name: "New Patient", age: 0, condition: "Unknown" };
     setPatients([...patients, newPatient]);
   };
 
-  const removePatient = (id) => {
-    // Logique pour supprimer un patient
+  // Spécifiez le type de `id` comme `number`
+  const removePatient = (id: number) => {
     setPatients(patients.filter((patient) => patient.id !== id));
   };
 
-  const updatePatient = (id) => {
+  const updatePatient = (id: number) => {
     // Logique pour mettre à jour un patient
     // Vous devez implémenter la mise à jour des patients en fonction de l'ID fourni
   };
@@ -38,21 +37,12 @@ const AboutPage = () => {
           animate={{ scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <Card 
-            title="Patients" 
-            value={patients.length.toString()} // Convertir la longueur en chaîne de caractères
-            icon={<ChartBarIcon className="h-6 w-6" />} 
-            description="Description of patients" 
-            imageUrl="src\img\téléchargement.jpg" 
-            onAdd={addPatient}
-            onRemove={() => removePatient(1)} // Remplacez 1 par l'ID du patient à retirer
-            onUpdate={() => updatePatient(1)} // Remplacez 1 par l'ID du patient à mettre à jour
-          />
+          {/* Utilisation du composant Card ici */}
         </motion.div>
         <h1 className="text-2xl font-bold">About Us</h1>
         <p>This is the about page of our Next.js application.</p>
+        <Button onClick={() => alert('Clicked!')}>Click Me</Button>
       </div>
-      <Button onClick={() => alert('Clicked!')}>Click Me</Button>
     </Layout>
   );
 };

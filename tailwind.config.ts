@@ -6,13 +6,11 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#007bff', // Bleu
-        secondary: '#6c757d', // Gris
-        // Ajoutez ou modifiez selon le design Dribbble
+        primary: '#0b2e22', // Bleu
+        secondary: '#00FFFF', // Gris
       },
       fontFamily: {
         sans: ['Graphik', 'sans-serif'],
@@ -23,6 +21,5 @@ module.exports = {
     },
   },
   plugins: [],
-}
 };
 export default config;
