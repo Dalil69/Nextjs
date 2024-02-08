@@ -4,10 +4,25 @@ import { FiHome, FiSettings, FiUser } from 'react-icons/fi';
 import { useModal } from '../app/components/Modal';
 import { useAlert } from '../app/components/AlertContext';
 import Button from '../app/components/button';
+import { useEffect } from 'react';
+import { useAuth } from '../app/components/AuthContext'; 
+import { useRouter } from 'next/router';
+
+
 
 const HomePage = () => {
   const { showModal } = useModal();
   const { showAlert } = useAlert();
+  const { isAuthenticated } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.push('/login'); // Redirigez vers la page de connexion si non authentifié
+    }
+  }, [isAuthenticated, router]);
+
+
 
   return (
     <div>
