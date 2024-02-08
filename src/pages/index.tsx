@@ -1,7 +1,6 @@
-// Exemple dans src/pages/index.tsx
 import React from 'react';
 import Link from 'next/link';
-import { FiHome, FiSettings, FiUser } from 'react-icons/fi'; // Importez les icônes de Feather Icons
+import { FiHome, FiSettings, FiUser } from 'react-icons/fi'; 
 import { useModal } from '../app/components/Modal';
 import { useAlert } from '../app/components/AlertContext';
 import Button from '../app/components/button';
@@ -26,10 +25,10 @@ const HomePage = () => {
               <span className="text-lg font-bold">About</span>
             </div>
           </Link>
-          <Link href="/settings">
+          <Link href="/extentions">
             <div className="p-8 mx-4 rounded-lg shadow-lg bg-white transform hover:scale-105 transition duration-300">
               <FiSettings className="text-4xl text-yellow-500 mb-2" />
-              <span className="text-lg font-bold">Settings</span>
+              <span className="text-lg font-bold">Extentions</span>
             </div>
           </Link>
         </div>
