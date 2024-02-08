@@ -3,6 +3,8 @@ import { AppProps } from 'next/app';
 import ModalProvider from '../app/components/Modal';
 import AlertProvider from '../app/components/AlertContext';
 import { AuthProvider } from '../app/components/AuthContext';
+import '../app/globals.css';
+
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
